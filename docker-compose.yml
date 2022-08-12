@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:latest
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=app_db
+      - MYSQL_USER=app_user
+      - MYSQL_PASSWORD=app_pwd
+      - MYSQL_ROOT_PASSWORD=root
+  backend:
+    build: ./backend
+    image: django-mysql-backend:1.0.0
+    command: python manage.py runserver 0.0.0.0:9000
+    volumes:
+      - ./backend/:/home/app/backend/
+    ports:
+      - "9200:9000"
+    env_file:
+      - ./backend/.env.dev
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+
+volumes:
+  mysql-data:
