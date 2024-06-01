@@ -20,15 +20,15 @@ ENV PYTHONUNBUFFERED 1
 # Install mysqlclient dependencies
 RUN apt update \
     && apt install -y --no-install-recommends python3-dev \
-    default-libmysqlclient-dev build-essential default-mysql-client \
+    default-libmysqlclient-dev build-essential pkg-config default-mysql-client \
     && apt autoclean
 
 # Upgrade Pip
-RUN pip install --no-cache-dir --upgrade pip
+RUN pip3 install --no-cache-dir --upgrade pip
 
 # Install python dependencies
 COPY ./requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 COPY ./entrypoint.sh .
 RUN sed -i 's/\r$//g' $APP_HOME/entrypoint.sh

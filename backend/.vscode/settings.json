@@ -3,20 +3,16 @@
   "files.insertFinalNewline": true,
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
-  "python.linting.flake8Args": [
-    "--max-line-length=99"
-  ],
+  "python.linting.flake8Args": ["--max-line-length=99"],
   "python.linting.enabled": true,
   "python.pythonPath": "/usr/local/bin/python",
   "python.linting.pycodestyleEnabled": false,
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "/usr/local/bin/black",
-  "python.formatting.blackArgs": [
-    "--line-length=99"
-  ],
+  "python.formatting.blackArgs": ["--line-length=99"],
   "[python]": {
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.organizeImports": "explicit"
     }
   },
   "[json]": {
@@ -28,7 +24,7 @@
   "files.associations": {
     "**/*.html": "html",
     "**/templates/**/*.html": "django-html",
-    "**/templates/**/*": "django-txt",
+    "**/templates/**/*": "django-txt"
   },
   "emmet.includeLanguages": {
     "django-html": "html"
@@ -36,15 +32,15 @@
   // "[html]": {
   //   "editor.defaultFormatter": "monosans.djlint"
   // },
-  "[django-html]": {
-    "editor.defaultFormatter": "monosans.djlint",
-  },
-  "[jinja]": {
-    "editor.defaultFormatter": "monosans.djlint"
-  },
-  "[jinja-html]": {
-    "editor.defaultFormatter": "monosans.djlint"
-  },
+  // "[django-html]": {
+  //   "editor.defaultFormatter": "monosans.djlint",
+  // },
+  // "[jinja]": {
+  //   "editor.defaultFormatter": "monosans.djlint"
+  // },
+  // "[jinja-html]": {
+  //   "editor.defaultFormatter": "monosans.djlint"
+  // },
   "git.ignoreLimitWarning": true,
   "workbench.colorTheme": "Monokai"
 }
