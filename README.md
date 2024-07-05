@@ -10,9 +10,8 @@ Ensure you have **Docker Engine** and **Docker Compose** installed on your machi
 
 Clone the repository to your local machine:
 
-    git clone git@github.com:ajithpmohan/docker-django-mysql-boilerplate.git
+    git clone https://github.com/ajithpmohan/docker-django-mysql-boilerplate.git
     cd docker-django-mysql-boilerplate
-
 
 ## Permission Required
 
@@ -27,11 +26,11 @@ Run the following commands to build the services and create the Django project:
     docker compose build
     docker compose run --rm backend django-admin startproject <PROJECT_NAME> .
 
-Replace PROJECT_NAME with the desired name of your project.
+Replace **PROJECT_NAME** with the desired name of your project.
 
 ## Change Database to MySQL Engine
 
-Update the DATABASES variable in settings.py to use MySQL. Replace it with the following lines:
+Update the **DATABASES** variable in settings.py to use MySQL. Replace it with the following lines:
 
     from decouple import config  # Ensure this import is at the top
 
